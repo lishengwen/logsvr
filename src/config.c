@@ -44,7 +44,6 @@ static void parse_string_item(const char *expr)
 	trim(buff);
 	
 	int pos = find_char_pos(buff, '=');
-	//printf("pos: %d\n", pos);
 
 	if (pos < 0) {
 		free(buff);
@@ -55,8 +54,6 @@ static void parse_string_item(const char *expr)
 	strncpy(val, buff + pos + 1, strlen(buff) - pos + 1);
 
 	free(buff);
-
-	//printf("key: %s, val: %s\n", key, val);
 
 	if (!strcmp(key, SERVER_IP)) {
 		strncpy(configs->server_ip, val, sizeof(val));
@@ -81,7 +78,6 @@ static void parse_int_item(const char *expr)
 	trim(buff);
 
 	int pos = find_char_pos(buff, '=');
-	//printf("pos: %d\n", pos);
 
 	if (pos < 0) {
 		free(buff);
@@ -93,8 +89,6 @@ static void parse_int_item(const char *expr)
 	val = atoi(strval);
 
 	free(buff);
-
-	//printf("key: %s, val: %d\n", key, val);
 
 	if (!strcmp(key, SERVER_PORT)) {
 		configs->server_port = val;
@@ -164,8 +158,6 @@ void construct_config()
 		parse_config_item(buff);
 		RESET_STR_ARR(buff);
 	}
-
-	printf("%s %d", configs->server_ip, configs->server_port);
 
 	fclose(fd);
 }
