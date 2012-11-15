@@ -1,0 +1,7 @@
+./config.o: src/config.c src/config.h include/comm.h src/util.h
+./list_test.o: src/list_test.c include/my_type.h
+./main.o: src/main.c src/config.h
+./mem_pool.o: src/mem_pool.c src/mem_pool.h include/list.h
+./my_type.o: src/my_type.c include/my_type.h
+./net.o: src/net.c
+./util.o: src/util.c src/util.h
