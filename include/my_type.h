@@ -11,6 +11,8 @@ typedef struct my_str_s {
 	char ptr[0];
 } my_str;
 
+typedef lg_str_t my_str;
+
 
 #define STR_CONTENT(strp) (char *)(strp + 1)
 #define STR_LENGTH(strp)  (*(int *)(strp))
